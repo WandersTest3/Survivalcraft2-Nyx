@@ -1,0 +1,10 @@
+build/
+refs/
+out/
+bin/
+obj/
+tests/bin/
+tests/obj/
+Survivalcraft.Windows/Content.zip
+*.apk
+*.APK

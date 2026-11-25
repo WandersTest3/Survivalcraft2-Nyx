@@ -1,0 +1,44 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install Android workload
+        run: dotnet workload install android
+
+      - name: Create Content.zip
+        run: |
+          cd Survivalcraft.Windows/Content
+          zip -qr ../Content.zip .
+
+      - name: Build
+        run: dotnet build Survivalcraft.Android/Survivalcraft.Android.csproj -c Release -v minimal
+
+      - name: Collect APK
+        run: |
+          mkdir -p out
+          find Survivalcraft.Android -name "*-Signed.apk" -exec cp {} out/ \;
+          ls -la out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SurvivalcraftAPI-Nyx-apk
+          path: out/*.apk
+          if-no-files-found: error

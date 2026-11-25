@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <RootNamespace>EntitySystem</RootNamespace>
+        <AssemblyName>EntitySystem</AssemblyName>
+        <Configurations>Debug;Release;Direct3D11</Configurations>
+        <PackageId>SurvivalcraftAPI.EntitySystem</PackageId>
+        <Title>SurvivalcraftAPI.EntitySystem</Title><!--For NuGet Package-->
+        <Version>1.8.2.0</Version><!--For NuGet Package-->
+        <PackageProjectUrl>https://gitee.com/SC-SPM/SurvivalcraftApi</PackageProjectUrl>
+        <RepositoryUrl>https://gitee.com/SC-SPM/SurvivalcraftApi</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <LangVersion>preview</LangVersion>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <TargetFrameworks>net10.0;net10.0-windows;net10.0-android</TargetFrameworks>
+        <DefineConstants>DEBUG</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <TargetFrameworks>net10.0;net10.0-windows;net10.0-android</TargetFrameworks>
+        <DebugType>none</DebugType>
+        <DefineConstants>TRACE</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Direct3D11' ">
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <DebugType>none</DebugType>
+        <DefineConstants>TRACE;RELEASE;DIRECT3D11</DefineConstants>
+        <Optimize>true</Optimize>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Engine\Engine.csproj" />
+    </ItemGroup>
+</Project>
