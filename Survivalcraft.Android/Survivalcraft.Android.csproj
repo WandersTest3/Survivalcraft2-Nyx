@@ -51,10 +51,10 @@
         <AndroidAsset Include="..\Engine\Resources\Lit.vsh" Link="Assets\Lit.vsh">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AndroidAsset>
-        <AndroidAsset Include="..\Engine\Resources\UnLit.psh" Link="Assets\Unlit.psh">
+        <AndroidAsset Include="..\Engine\Resources\Unlit.psh" Link="Assets\Unlit.psh">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AndroidAsset>
-        <AndroidAsset Include="..\Engine\Resources\UnLit.vsh" Link="Assets\Unlit.vsh">
+        <AndroidAsset Include="..\Engine\Resources\Unlit.vsh" Link="Assets\Unlit.vsh">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </AndroidAsset>
         <AndroidAsset Include="..\Engine\Resources\Debugfont.png" Link="Assets\Debugfont.png">
